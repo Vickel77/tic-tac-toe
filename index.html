@@ -1,0 +1,182 @@
+<!-- Tick Tack Toe -->
+<!-- ::: ONE HOUR SESSION ::: -->
+<!-- Features: 
+    Human vs Computer
+    Keep Scores for each game session
+    Alternate starting player for each session
+
+    First user is x
+    
+
+       1   2   3
+A    | o | x | o |
+B    | o | o | x |
+C    | o | o | x |
+
+BOARD STATE
+[
+    0,0   0,1   0,2
+    ["X",  "X",  "O"],
+
+    1,0   1,1  1,2
+    ["X",  "O",  "O"],
+
+    2,0   2,1  2,2
+    ["X",  "",  ""],
+]
+
+[[2,0  1,0  0,0], [2,1  1,1  0,1], [2,2  1,2  0,2]]
+
+[[0,0  1,1  2,2], []]
+
+
+function Rotate() {
+    variable: new board;
+
+    row = 3;
+    column = 1;
+
+    while (column and row !== 0) {
+        
+    }
+}
+
+CURRENT PLAYER = X
+
+
+[ ["X",  "X",  "O"], ["X",  "O",  "O"], ["X",  "",  ""] ]
+
+
+H - X
+0,0  0,1  2,0  1,0
+
+C - O
+1,1  
+
+ function checkIfWon {
+     xGameplay Horizontal
+     for (parent in row) {
+        for (child in column) {
+            cell = gamePlay[row][column];
+            if cell is equal to x
+                xGameplay[] = column;
+            if column is equal to 2
+                if the length of xGameplay is 3
+                    x has won
+                    break
+                clear xGameplay
+        }
+    }
+
+    xGameplay Vertical
+    for (parent in row) {
+        for (child in column) {
+            cell = gamePlay[column][row];
+            if cell is equal to x
+                xGameplay[] = column;
+            if column is equal to 2
+                if the length of xGameplay is 3
+                    x has won
+                    break
+                clear xGameplay
+        }
+    }
+
+    xGameplayRight Diagonal
+    xGameplayLeft Diagonal
+    for (parent in row) {
+        for (child in column) {
+            if row and column is equal
+                cell = gamePlay[column][row];
+                if cell is equal to x
+                    xGameplayLeft[] = column;
+                if the length of xGameplayLeft is 3
+                    x has won
+                    break
+            if row and column is equal to 1 or 
+            row is equal to 0 and column is equal to 2 or 
+            row is equal to 2 and column is equal to 0 or 
+                cell = gamePlay[column][row];
+                if cell is equal to x
+                    xGameplayRight[] = column;
+                if the length of xGameplayRight is 3
+                    x has won
+                    break
+        }
+    }
+ }
+
+
+
+when a player plays run checkGame()
+after check
+
+function checkGame {
+    if moves are greater than 3 for the current player
+        check if current player has won
+        if current player has won 
+            end game
+}
+
+
+function computerMove {
+  computerPatterns = BOARD_STATE;
+  emptyCells
+
+  for (parent in row) {
+        for (child in column) {
+            cell = gamePlay[row][column];
+            if (cell == ""){
+                emptyCells.push([row, column]);
+            }
+        }
+        
+    }
+
+    if emptyCells is not empty
+        randomly select an a number within the length of the emptyCells array
+        update cell with computer choice;
+        update current player to nextplayer;
+
+    if emptyCells is empty 
+        end game
+
+}
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="title">
+            <h1 class="game-title">TIC TAC TOE</h1>
+            <h5 class="status"></h5>
+        </div>
+        <div class="game-board">
+            <button data-row="0" data-column="0" class="cell"></button>
+            <button data-row="0" data-column="1" class="cell"></button>
+            <button data-row="0" data-column="2" class="cell"></button>
+            <button data-row="1" data-column="0" class="cell"></button>
+            <button data-row="1" data-column="1" class="cell"></button>
+            <button data-row="1" data-column="2" class="cell"></button>
+            <button data-row="2" data-column="0" class="cell"></button>
+            <button data-row="2" data-column="1" class="cell"></button>
+            <button data-row="2" data-column="2" class="cell"></button>
+        </div>
+
+        <button class="restart-game" onclick="clearBoard()">Restart Game</button>
+    </section>
+    <!-- <script src="dist/main.js"></script> -->
+    <script src="app.js"></script>
+</body>
+
+</html>
