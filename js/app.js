@@ -18,11 +18,9 @@ const checkIfBoardIsEmpty = () => {
   for (i = 0; i < BoardState.length; i++) {
     if (BoardState[i].includes("")) {
       status.innerHTML = xIsNext ? `X is Next` : "O is Next";
-      console.log("You can play");
       return true;
     } else {
       status.innerHTML = "GAME OVER!";
-      console.log("Can't play");
     }
   }
 }
@@ -81,10 +79,7 @@ clearBoard = () => {
     status.classList.remove("won");
   })
   checkIfBoardIsEmpty();
-  // const Text = <input />;
-  // Text.innerHTML = document.location.href;
-  // innerHTML.select();
-  // document.execCommand("copy");
+
 }
 
 // Run CHECKIFWON only after 3 moves
